@@ -228,6 +228,7 @@ project if the project has been created by more than one person.
                     <li><a href='https://www.python.org/downloads/release/python-3100/'>Python V3.10.0 as Match Case is used</a></li>
                     <li><a href='https://pypi.org/project/tabulate/'>Tabulate library</a></li>
                 </ul>
+            <li>.txt files must be stored in the same directory as the program files</li>
         </ul>
     </p>
     <p>
