@@ -167,7 +167,7 @@
     <h3>Useage</h3>
     <p>
         In order for the program to work the data in <b>inventory.txt</b> must be formated using the following:
-        <ol>
+        <ul>
             <li>The first line must contain the data headings</li>
             <li>Data headings must be in this order:</li>
                 <ol>
