@@ -7,8 +7,8 @@ import datetime
 #====Set Directory Path======
 
 T21_FOLDER = os.path.dirname(__file__)
-USER_FILE = "user.txt"
-TASK_FILE = "tasks.txt"
+USER_FILE = "user_v1.txt"
+TASK_FILE = "tasks_v1.txt"
 
 #=====Global Variables======
 
