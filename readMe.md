@@ -1,23 +1,3 @@
-
-The project name.
-○ A clear, short, and to the point description of your project. Describe
-the importance of your project, and what it does.
-○ A table of contents to allow other people to quickly navigate
-especially long or detailed READMEs.
-○ An installation section that tells other users how to install your project
-locally.
-○ A usage section that instructs others on how to use your project after
-they’ve installed it. Include screenshots of your project in action.
-○ A section for credits that highlights and links to the authors of your
-project if the project has been created by more than one person.
-
-<h1>Final Capstone Projects</h1>
-
-<p>
-  This repository contains the final version fo programs completed as part of the Hyperion Dev Software Engineering Bootcamp
-   and is an example of some of the things that I have learned during the course.
-</p>
-
 <h2 id='contents'>Contents</h2>
 
 <ol>
@@ -105,7 +85,6 @@ project if the project has been created by more than one person.
                 </ol>    
             </li>
         </ul>
-        <h1 style='color: red'>CHANGE FILE REFS IN DOCS THAT HAVE BEEN UPLOADED!</h1>
     </p>
     <h6>[<a href='#contents'>To Contents</a>]</h6>
 
