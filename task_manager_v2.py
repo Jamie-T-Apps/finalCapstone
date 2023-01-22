@@ -35,7 +35,7 @@ def write_data(file, method, data):
 def get_logins():
     # load data from users.txt as dictionary
     temp_logins= {}
-    for user_and_pass in get_data("user.txt", "r"):
+    for user_and_pass in get_data("user_v2.txt", "r"):
         # for user_and_pass [0] is line num, [1] is username, [2] is password
         temp_logins[user_and_pass[1]] = user_and_pass[2] 
     return temp_logins
@@ -107,13 +107,13 @@ def add_task(task_username):
     date = datetime.datetime.now()
     task_created = date.strftime("%d %b %Y")
     temp_list = [list(((task_username, task_title, task_description, task_created, task_due_date, "No")))]
-    write_data("tasks.txt", "a", temp_list)
+    write_data("tasks_v2.txt", "a", temp_list)
     
     return print(f"\n{task_title} added to task list\n")
 
 def view_all():
     # prints all the tasks in tasks.txt
-    for task_data in get_data("tasks.txt", "r"):
+    for task_data in get_data("tasks_v2.txt", "r"):
         print(f"*"*75)
         print(f"{'Task ID:':{20}}{task_data[0]:{20}}")
         print(f"{'Task Title:':{20}}{task_data[2]}")
@@ -127,7 +127,7 @@ def view_all():
 
 def view_mine():
     # prints all the tasks in tasks.txt that are assinged to the current user
-    for task_data in get_data("tasks.txt", "r"):
+    for task_data in get_data("tasks_v2.txt", "r"):
         if current_user == task_data[1]:
             print(f"*"*75)
             print(f"{'Task ID:':{20}}{task_data[0]:{20}}")
@@ -150,8 +150,8 @@ def count_items(file, items):
 
 def generate_user_report():
 
-    temp_users = get_data("user.txt", "r")
-    temp_tasks = get_data("tasks.txt", "r")
+    temp_users = get_data("user_v2.txt", "r")
+    temp_tasks = get_data("tasks_v2.txt", "r")
     current_date = datetime.datetime.now()
     temp_list = ""
 
@@ -209,7 +209,7 @@ def generate_user_report():
 def generate_task_report():
     # generates text doc containing report info for tasks.txt
 
-    temp_tasks = get_data("tasks.txt", "r")
+    temp_tasks = get_data("task_v2.txt", "r")
     current_date = datetime.datetime.now()
 
     # total tasks
@@ -271,7 +271,7 @@ def edit_task(id):
     else:
         while True:
             try:
-                temp_tasks = get_data("tasks.txt", "r")
+                temp_tasks = get_data("tasks_v2.txt", "r")
                 id = int(id)
                 for task_data in temp_tasks:
                     task_title = task_data[2]
@@ -291,7 +291,7 @@ def edit_task(id):
                                         continue
                                     else:
                                         task_data[1] = new_username.lower()
-                                        write_data("tasks.txt", "w", list(strip_id(temp_tasks)))
+                                        write_data("tasks_v2.txt", "w", list(strip_id(temp_tasks)))
                                         return print(f"Task {id} - {task_title} username changed from {old_username}"
                                                     f" to {new_username}\n")
                                 case "5":
@@ -299,7 +299,7 @@ def edit_task(id):
                                     new_due_date = input(f"Change due date from {old_due_date} to (use DD Mon YYYY format): ")
                                     if is_valid_date_format(new_due_date):
                                         task_data[5] = new_due_date
-                                        write_data("tasks.txt", "w", list(strip_id(temp_tasks)))
+                                        write_data("tasks_v2.txt", "w", list(strip_id(temp_tasks)))
                                         return print(f"Task {id} - {task_title} due date changed from {old_due_date}"
                                                     f" to {new_due_date}\n")
                                     else:
@@ -307,7 +307,7 @@ def edit_task(id):
                                         continue
                                 case "6":
                                     task_data[6] = "Yes"
-                                    write_data("tasks.txt", "w", list(strip_id(temp_tasks)))
+                                    write_data("tasks_v2.txt", "w", list(strip_id(temp_tasks)))
                                     return print(f"Task {id} - {task_title} completion status changed from No"
                                                     f" to Yes\n")
                                 case "-1":
